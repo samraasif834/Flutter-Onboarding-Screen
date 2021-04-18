@@ -11,6 +11,7 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   final controller = PageController();
+  bool isLastPage = false;
   @override
   void dispose() {
     controller.dispose();
@@ -23,44 +24,66 @@ class _OnboardingState extends State<Onboarding> {
         padding: const EdgeInsets.only(bottom: 80),
         child: PageView(
           controller: controller,
+          onPageChanged: (index) {
+            setState(() => isLastPage = index == 2);
+          },
           children: [
-          BuildPage(
-color: Colors.green.shade100, subtitle: 'lorem ipusm lorem ipusm', title: 'Hello', urlimage: 'assets/images/img1.png'
-           ),
-            BuildPage(color: Colors.cyan, subtitle: 'lorem ipusm lorem ipusm', title: 'Bye', urlimage: 'assets/images/img1.png',
-
-           ),
-           
-           
-             BuildPage(
-color: Colors.blue.shade100, subtitle: 'lorem ipusm lorem ipusm', title: 'Good evening', urlimage: 'assets/images/img1.png'
-           ),
-           
+            BuildPage(
+                color: Colors.green.shade100,
+                subtitle: 'lorem ipusm lorem ipusm',
+                title: 'Hello',
+                urlimage: 'assets/images/img1.png'),
+            BuildPage(
+              color: Colors.cyan,
+              subtitle: 'lorem ipusm lorem ipusm',
+              title: 'Bye',
+              urlimage: 'assets/images/img1.png',
+            ),
+            BuildPage(
+                color: Colors.blue.shade100,
+                subtitle: 'lorem ipusm lorem ipusm',
+                title: 'Good evening',
+                urlimage: 'assets/images/img1.png'),
           ],
         ),
       ),
-      bottomSheet: Container(
+      bottomSheet: isLastPage ? TextButton(onPressed:() async {}, child: Text(
+        "Get Started",
+        style: TextStyle(
+          fontSize: 24,
+
+        ),
+        
+      )):
+      
+      
+      
+      Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 80,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TextButton(onPressed: () =>controller.jumpToPage(2), child: Text('Skip')),
+            TextButton(
+                onPressed: () => controller.jumpToPage(2), child: Text('Skip')),
             Center(
-              child:SmoothPageIndicator(
-                controller:controller,
-                count:3,
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: 3,
                 effect: WormEffect(
-                  spacing: 16,
-                  dotColor: Colors.black,
-                  activeDotColor: Colors.teal.shade700
-                ),
-                onDotClicked: (index)=>controller.animateToPage(index,
-                 duration:const Duration(milliseconds: 500), 
-                 curve: Curves.easeIn),
+                    spacing: 16,
+                    dotColor: Colors.black,
+                    activeDotColor: Colors.teal.shade700),
+                onDotClicked: (index) => controller.animateToPage(index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn),
               ),
             ),
-            TextButton(onPressed: ()=>controller.nextPage(duration: const Duration(microseconds: 500), curve: Curves.easeInOut), child: Text('next'))
+            TextButton(
+                onPressed: () => controller.nextPage(
+                    duration: const Duration(microseconds: 500),
+                    curve: Curves.easeInOut),
+                child: Text('next'))
           ],
         ),
       ),
