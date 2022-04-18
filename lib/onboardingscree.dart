@@ -50,14 +50,22 @@ class _OnboardingState extends State<Onboarding> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TextButton(onPressed: () {}, child: Text('Skip')),
+            TextButton(onPressed: () =>controller.jumpToPage(2), child: Text('Skip')),
             Center(
               child:SmoothPageIndicator(
                 controller:controller,
                 count:3,
+                effect: WormEffect(
+                  spacing: 16,
+                  dotColor: Colors.black,
+                  activeDotColor: Colors.teal.shade700
+                ),
+                onDotClicked: (index)=>controller.animateToPage(index,
+                 duration:const Duration(milliseconds: 500), 
+                 curve: Curves.easeIn),
               ),
             ),
-            TextButton(onPressed: () {}, child: Text('next'))
+            TextButton(onPressed: ()=>controller.nextPage(duration: const Duration(microseconds: 500), curve: Curves.easeInOut), child: Text('next'))
           ],
         ),
       ),
