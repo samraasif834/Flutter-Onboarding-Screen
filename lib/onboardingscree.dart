@@ -25,15 +25,15 @@ class _OnboardingState extends State<Onboarding> {
           controller: controller,
           children: [
           BuildPage(
-color: Colors.green.shade100, subtitle: '', title: '', urlimage: ''
+color: Colors.green.shade100, subtitle: 'lorem ipusm lorem ipusm', title: 'Hello', urlimage: 'assets/images/img1.png'
            ),
-            BuildPage(color: null, subtitle: '', title: '', urlimage: '',
+            BuildPage(color: Colors.cyan, subtitle: 'lorem ipusm lorem ipusm', title: 'Bye', urlimage: 'assets/images/img1.png',
 
            ),
            
            
              BuildPage(
-color: null, subtitle: '', title: '', urlimage: ''
+color: Colors.blue.shade100, subtitle: 'lorem ipusm lorem ipusm', title: 'Good evening', urlimage: 'assets/images/img1.png'
            ),
            
           ],
