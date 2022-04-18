@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboardingscreen/widget/buildpage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboarding extends StatefulWidget {
@@ -23,16 +24,16 @@ class _OnboardingState extends State<Onboarding> {
         child: PageView(
           controller: controller,
           children: [
-           buildPage(
-
+          BuildPage(
+color: null, subtitle: '', title: '', urlimage: ''
            ),
-            buildPage(
+            BuildPage(color: null, subtitle: '', title: '', urlimage: '',
 
            ),
            
            
-             buildPage(
-
+             BuildPage(
+color: null, subtitle: '', title: '', urlimage: ''
            ),
            
           ],
