@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class BuildPage extends StatelessWidget {
@@ -25,6 +27,14 @@ class BuildPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
 
           ),),
+          const SizedBox(height: 24,),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Text(subtitle,
+            style: const TextStyle(
+              color: Colors.black,
+            ),),
+          )
           
         ],
       ),
