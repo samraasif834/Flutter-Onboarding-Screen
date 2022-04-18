@@ -23,24 +23,18 @@ class _OnboardingState extends State<Onboarding> {
         child: PageView(
           controller: controller,
           children: [
-            Container(
-              color: Colors.red,
-              child: Center(
-                child: Text('page 1'),
-              ),
-            ),
-            Container(
-              color: Colors.indigo,
-              child: Center(
-                child: Text('page 2'),
-              ),
-            ),
-            Container(
-              color: Colors.green,
-              child: Center(
-                child: Text('page 3'),
-              ),
-            )
+           buildPage(
+
+           ),
+            buildPage(
+
+           ),
+           
+           
+             buildPage(
+
+           ),
+           
           ],
         ),
       ),
