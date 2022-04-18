@@ -25,7 +25,7 @@ class _OnboardingState extends State<Onboarding> {
           controller: controller,
           children: [
           BuildPage(
-color: null, subtitle: '', title: '', urlimage: ''
+color: Colors.green.shade100, subtitle: '', title: '', urlimage: ''
            ),
             BuildPage(color: null, subtitle: '', title: '', urlimage: '',
 
