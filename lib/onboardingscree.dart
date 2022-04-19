@@ -63,6 +63,8 @@ class _OnboardingState extends State<Onboarding> {
                     fontSize: 24,
                   )),
               onPressed: () async {
+final prefs =await shared
+
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => Homepage()));
               },
