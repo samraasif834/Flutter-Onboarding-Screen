@@ -47,18 +47,26 @@ class _OnboardingState extends State<Onboarding> {
           ],
         ),
       ),
-      bottomSheet: isLastPage ? TextButton(onPressed:() async {}, child: Text(
+      bottomSheet: isLastPage ? TextButton.styleFrom( 
+        
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        primary: Colors.white,
+        backgroundColor: Colors.teal.shade700,
+        minimumSize: const Size.fromHeight(80
+        ),
+       
+        child:Text(
         "Get Started",
         style: TextStyle(
           fontSize: 24,
 
         ),
         
-      )):
-      
-      
-      
-      Container(
+      ),
+       onPressed:() async {},
+      ): Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 80,
         child: Row(
